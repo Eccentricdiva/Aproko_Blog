@@ -37,8 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Aproko_Blog',
+    'accounts',
+    'rest_framework',
     'blog',
+
+
+
 ]
 
 MIDDLEWARE = [
