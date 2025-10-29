@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Posts tagged with "{{ tag.name }}"</h2>
+{% for post in posts %}
+    <article>
+        <h3><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3>
+        <p>by {{ post.author.username }} | {{ post.created_at|date:"F j, Y" }}</p>
+        <p>{{ post.content|truncatewords:30 }}</p>
+    </article>
+    <hr>
+{% empty %}
+    <p>No posts under this tag.</p>
+{% endfor %}
+{% endblock %}

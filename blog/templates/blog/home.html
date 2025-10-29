@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Aproko Blog</title>
-</head>
-<body>
-    <h1>Welcome to Aproko Blog 📰</h1>
-    <h3>Latest Posts</h3>
-    <ul>
-        {% for post in posts %}
-            <li>
-                <a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
-                <br>
-                <small>By {{ post.author }} on {{ post.created }}</small>
-            </li>
-        {% empty %}
-            <li>No posts yet.</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Home - Aproko Blog{% endblock %}
+
+{% block content %}
+<h1>Welcome to Aproko Blog!</h1>
+<p>This is the homepage. Explore posts and enjoy reading!</p>
+{% endblock %}
